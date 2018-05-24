@@ -39,7 +39,13 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
   res.render('home.hbs',{
     pageTitle: 'Home Page',
-    para: 'Welcome Home!'
+    para: 'Welcome Home'
+  });
+});
+
+app.get('/projects',(req, res) => {
+  res.render('projects.hbs',{
+    pageTitle: 'Projects'
   });
 });
 
@@ -47,13 +53,13 @@ app.get('/about', (req,res) => {
   res.render('about.hbs',{
     pageTitle: 'About Page',
   });
-})
+});
 
 app.get('/bad', (req,res) => {
   res.send({
     error: 'Unnable to complete request'
   });
-})
+});
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
